@@ -1,0 +1,7 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="cursor_size">32dp</dimen>
+    <dimen name="swipe_pad_height">300dp</dimen>
+    <dimen name="swipe_pad_width">16dp</dimen>
+    <dimen name="tracker_size">72dp</dimen>
+</resources>
