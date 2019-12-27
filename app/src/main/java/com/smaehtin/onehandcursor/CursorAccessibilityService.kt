@@ -142,12 +142,11 @@ class CursorAccessibilityService : AccessibilityService() {
             val y = event.rawY.toInt()
 
             when (event.action and MotionEvent.ACTION_MASK) {
-                MotionEvent.ACTION_DOWN -> {
-                    leftSide = true
-                    stopTimeoutTimer()
-                }
                 MotionEvent.ACTION_MOVE -> {
+                    leftSide = true
                     moving = true
+
+                    stopTimeoutTimer()
 
                     val trackerX = x - (trackerSize / 2).toInt()
                     val trackerY = y - (trackerSize / 2).toInt()
@@ -184,12 +183,11 @@ class CursorAccessibilityService : AccessibilityService() {
             val y = event.rawY.toInt()
 
             when (event.action and MotionEvent.ACTION_MASK) {
-                MotionEvent.ACTION_DOWN -> {
-                    leftSide = false
-                    stopTimeoutTimer()
-                }
                 MotionEvent.ACTION_MOVE -> {
+                    leftSide = false
                     moving = true
+
+                    stopTimeoutTimer()
 
                     val trackerX = x - (trackerSize / 2).toInt()
                     val trackerY = y - (trackerSize / 2).toInt()
