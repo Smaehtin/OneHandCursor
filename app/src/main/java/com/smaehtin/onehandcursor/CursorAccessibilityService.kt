@@ -358,14 +358,17 @@ class CursorAccessibilityService : AccessibilityService() {
     private fun setPosition(view: View, x: Int, y: Int) {
         val layoutParams = view.layoutParams as WindowManager.LayoutParams
 
-        val minX = -(layoutParams.width.toFloat() / 2).toInt() + 1
+        val centerX = (layoutParams.width.toFloat() / 2).toInt()
+        val centerY = (layoutParams.height.toFloat() / 2).toInt()
+
+        val minX = -centerX + 1
         val maxX = displayMetrics.widthPixels - 1
 
-        val minY = -(layoutParams.height.toFloat() / 2).toInt() + 1
+        val minY = -centerY + 1
         val maxY = displayMetrics.heightPixels - 1
 
-        layoutParams.x = min(max(minX, x), maxX - (layoutParams.width.toFloat() / 2).toInt())
-        layoutParams.y = min(max(minY, y), maxY - (layoutParams.width.toFloat() / 2).toInt())
+        layoutParams.x = min(max(minX, x), maxX - centerX)
+        layoutParams.y = min(max(minY, y), maxY - centerY)
 
         view.layoutParams = layoutParams
 
