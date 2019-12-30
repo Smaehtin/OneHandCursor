@@ -266,13 +266,18 @@ class CursorAccessibilityService : AccessibilityService() {
                             distance(trackerOriginalX, event.rawX, trackerOriginalY, event.rawY)
 
                         hasMovedMoreThanClickThreshold = moveDistance >= CLICK_THRESHOLD
+                    } else {
+                        val trackerX = x - startX
+                        val trackerY = y - startY
+
+                        setPosition(trackerView, trackerX, trackerY)
+                        setCursorPositionRelativeToTracker(
+                            trackerX,
+                            trackerY,
+                            trackerSize,
+                            leftSide
+                        )
                     }
-
-                    val trackerX = x - startX
-                    val trackerY = y - startY
-
-                    setPosition(trackerView, trackerX, trackerY)
-                    setCursorPositionRelativeToTracker(trackerX, trackerY, trackerSize, leftSide)
                 }
                 MotionEvent.ACTION_CANCEL,
                 MotionEvent.ACTION_UP -> {
