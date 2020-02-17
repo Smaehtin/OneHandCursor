@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">One Hand Cursor</string>
-    <string name="action_settings">Settings</string>
+
+    <string name="dialog_cancel">Cancel</string>
+    <string name="dialog_ok">OK</string>
+
+    <string name="dialog_enable_accessibility_service_message">In order to use the app, you need to enable the One Hand Cursor accessibility service</string>
+    <string name="dialog_enable_accessibility_service_title">Accessibility service disabled</string>
+    <string name="dialog_enable_draw_overlay_permission_message">The app needs permission to draw over other apps</string>
+    <string name="dialog_enable_draw_overlay_permission_title">Permission required</string>
 </resources>

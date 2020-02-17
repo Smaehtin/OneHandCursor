@@ -27,6 +27,10 @@ private const val TIMEOUT_MILLISECONDS = 5000L
 private const val TRACKER_AREA_SIZE_PERCENTAGE = 0.4
 
 class CursorAccessibilityService : AccessibilityService() {
+    companion object {
+        var sharedInstance: CursorAccessibilityService? = null
+    }
+
     private lateinit var cursorView: View
     private lateinit var displayMetrics: DisplayMetrics
     private lateinit var leftSwipePadView: View
@@ -50,6 +54,8 @@ class CursorAccessibilityService : AccessibilityService() {
 
     override fun onServiceConnected() {
         super.onServiceConnected()
+
+        sharedInstance = this
 
         windowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
 
