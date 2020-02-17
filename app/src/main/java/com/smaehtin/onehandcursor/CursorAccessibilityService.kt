@@ -105,6 +105,7 @@ class CursorAccessibilityService : AccessibilityService() {
 
     private fun createSwipePadViews() {
         val swipePadHeight = resources.getDimension(R.dimen.swipe_pad_height).toInt()
+        val swipePadOffset = resources.getDimension(R.dimen.swipe_pad_offset).toInt()
         val swipePadWidth = resources.getDimension(R.dimen.swipe_pad_width).toInt()
         val trackerSize = resources.getDimension(R.dimen.tracker_size)
 
@@ -121,7 +122,7 @@ class CursorAccessibilityService : AccessibilityService() {
             ).apply {
                 gravity = Gravity.TOP or Gravity.LEFT
                 x = 0
-                y = displayMetrics.heightPixels - swipePadHeight
+                y = displayMetrics.heightPixels - swipePadHeight - swipePadOffset
             }
 
             setBackgroundColor(Color.TRANSPARENT)
@@ -137,7 +138,7 @@ class CursorAccessibilityService : AccessibilityService() {
             ).apply {
                 gravity = Gravity.TOP or Gravity.LEFT
                 x = displayMetrics.widthPixels - swipePadWidth
-                y = displayMetrics.heightPixels - swipePadHeight
+                y = displayMetrics.heightPixels - swipePadHeight - swipePadOffset
             }
 
             setBackgroundColor(Color.TRANSPARENT)
