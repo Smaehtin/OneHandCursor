@@ -21,7 +21,7 @@ import kotlin.math.min
 import kotlin.math.pow
 import kotlin.math.sqrt
 
-private const val CLICK_THRESHOLD = 5
+private const val CLICK_THRESHOLD = 10
 private const val MIN_CURSOR_Y = -150
 private const val TIMEOUT_MILLISECONDS = 5000L
 private const val TRACKER_AREA_SIZE_PERCENTAGE = 0.4
